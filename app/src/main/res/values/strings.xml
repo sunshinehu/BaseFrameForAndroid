@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BaseFrameForAndroid</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="json_parse_error">JSON解析错误！</string>
+    <string name="network_request_error">网络请求错误！</string>
+    <string name="network_status_error">您的网络不可用，请检查网络是否打开！</string>
+
+
+
+</resources>
