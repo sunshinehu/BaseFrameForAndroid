@@ -15,6 +15,7 @@ public abstract class BaseActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity=this;
+        AppManager.INSTANCE.addActivity(this);//加入activity管理
         try {
             InjectUtil.Inject(this);
         } catch (Exception e) {
@@ -24,6 +25,11 @@ public abstract class BaseActivity extends Activity{
         createActivity();
     }
 
-    public abstract void createActivity();
+    protected abstract void createActivity();//抽象方法,用来代替oncreate
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AppManager.INSTANCE.finishActivity(this);//移除activity
+    }
 }
